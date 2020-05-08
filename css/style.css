@@ -328,15 +328,8 @@ template {
   border: none;
   border-radius: 2px;
   text-transform: uppercase; }
-  .button:hover {
-    cursor: pointer; }
   .button--primary {
-    background-color: #E3B873;
-    color: #fff;
-    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
-    transition: box-shadow 0.3s; }
-    .button--primary:hover {
-      box-shadow: none; }
+    background-color: #E3B873; }
   .button--outline {
     border: 1px solid #fff;
     background-color: transparent;
@@ -364,10 +357,7 @@ template {
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
-  margin-right: 40px;
-  transition: color 0.2s; }
-  .nav__item:hover {
-    color: #E3B873; }
+  margin-right: 40px; }
 
 .phone {
   color: #E3B873; }
