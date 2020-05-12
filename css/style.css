@@ -558,6 +558,9 @@ body {
     vertical-align: middle;
     color: #363636; }
 
+.projects--dark {
+  background: linear-gradient(to bottom, white 50%, black 50%); }
+
 @media screen and (max-width: 1200px) {
   html {
     font-size: 12px; }
