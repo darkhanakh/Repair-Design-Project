@@ -26,4 +26,16 @@ $(document).ready(function () {
   closeModal.on("click", function () {
     modal.toggleClass("modal--visible");
   });
+
+  function smoothScroolHome() {
+    $('#js-arrow').on('click', function (event) {
+      event.preventDefault();
+      var top = $('#js-hero').offset().top;
+
+      $("html, body").animate({
+        scrollTop: top
+      }, 500);
+    });
+  }
+  smoothScroolHome();
 });

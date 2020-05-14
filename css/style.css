@@ -654,6 +654,24 @@ body {
   .modal__button {
     align-self: flex-end; }
 
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #E3B873;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; }
+  .arrow a {
+    display: block;
+    transform: rotate(90deg);
+    font-size: 36px;
+    text-decoration: none;
+    color: #131313; }
+
 @media screen and (max-width: 1200px) {
   html {
     font-size: 12px; }
