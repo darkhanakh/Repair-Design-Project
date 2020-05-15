@@ -1,22 +1,37 @@
-.section-title
-  &__head
-    font-family: 'Yeseva One'
-    font-size: 1.36rem
-    line-height: 1.93rem
-  
-.section-subtitle
-  margin-bottom: 2.86rem
-  &__text
-    margin: auto
-    max-width: 52.5rem
-    font-size: 1.43rem
-    line-height: 1.93rem
-    text-align: center
-    vertical-align: middle
-    color: $muted
-.projects
-  &--dark
-    background: linear-gradient(to bottom, white 50%, black 50%)
-
-
+.swiper
+  &-slide
+    display: flex
+    flex-wrap: wrap
+    &__text
+      flex-basis: 50%
+      margin-bottom: 2.42rem
+    &__heading
+      font-size: 1.285rem
+      line-height: 1.78rem
+      font-family: 'Yeseva One', cursive
+      color: $primary  
+      text-transform: uppercase
+      margin-bottom: 0.64rem
+  &-pagination
+    &-bullet
+      background-color: rgba($light, 0.3)   
+      &-active
+        background-color: $light
+  &-button
+    &-prev, &-next
+      bottom: 0
+      top: auto
+      background-size: 42px
+      width: 42px
+      height: 14px
+      &::after
+        display: none 
+    &-prev
+      left: 0
+      background: url('../img/arrow-prev.svg') no-repeat center
+    &-next
+      background: url('../img/arrow-next.svg') no-repeat center 
+.swiper-container-horizontal>.swiper-pagination-bullets
+  width: auto
+  bottom: -2px            
 
