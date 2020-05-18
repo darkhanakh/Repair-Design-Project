@@ -51,8 +51,7 @@ $(document).ready(function () {
       event.preventDefault();
       var top = $("#js-hero").offset().top;
 
-      $("html, body").animate(
-        {
+      $("html, body").animate({
           scrollTop: top,
         },
         500
@@ -60,4 +59,6 @@ $(document).ready(function () {
     });
   }
   smoothScroolHome();
+
+  new WOW().init();
 });

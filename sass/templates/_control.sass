@@ -1,0 +1,59 @@
+.control
+  &__section-title
+    margin-bottom: 2.214rem
+    margin-top: -30rem
+  &__video
+    display: flex
+    margin: auto  
+    margin-bottom: 4.42rem
+    position: relative
+    max-width: 58.357rem
+    min-height: 31rem
+    background: $dark url('../img/video-background.jpg') center no-repeat
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
+    &::before
+      position: absolute
+      content: ''
+      height: 100%
+      width: 100%
+      background-color: rgba(black, 0.8)
+  &__text
+    max-width: 40.785rem   
+    margin: auto
+    margin-bottom: 4.285rem
+    text-align: center
+    font-size: 1.428rem
+    line-height: 2.4rem
+    &::before
+      content: ''
+      display: block
+      margin: auto
+      width: 55px
+      height: 2px
+      background-color: $primary
+      border-radius: 30px
+      margin-bottom: 2.5rem
+  &__form
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    max-width: 55rem  
+    margin: auto
+  &__input-group
+    display: flex
+    flex-direction: column 
+    flex-basis: 30%
+  &__label
+    margin-bottom: -7px 
+    color: $secondary 
+  &__policy
+    flex-basis: 100%
+    margin-top: 1.2rem
+    &-label
+      justify-content: center
+  &__button
+    padding: 1.286rem 4.785rem  
+.video
+  &__play
+    position: relative 
+    margin: auto     
