@@ -51,7 +51,8 @@ $(document).ready(function () {
       event.preventDefault();
       var top = $("#js-hero").offset().top;
 
-      $("html, body").animate({
+      $("html, body").animate(
+        {
           scrollTop: top,
         },
         500
@@ -61,4 +62,44 @@ $(document).ready(function () {
   smoothScroolHome();
 
   new WOW().init();
+
+  // TODO Валидация формы
+
+  $(".modal__form").validate({
+    // * Имя класса для ошибки
+    errorClass: "invalid",
+    // * Правило для форм
+    rules: {
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15,
+      },
+      userPhone: "required",
+
+      userEmail: {
+        required: true,
+        email: true,
+      },
+    },
+
+    //* Сообщение которое будет выводится
+    messages: {
+      userName: {
+        required: "Заполните поле",
+        minlength: "Имя не короче двух букв",
+        maxlength: "Имя не длиннее 15 букв",
+      },
+      userPhone: "Заполните поле",
+
+      userEmail: {
+        required: "Заполните поле",
+        email: "Введите корректный email",
+      },
+    },
+  });
+
+  // * Маска для телефона
+
+  $("[type=tel]").mask("+7(000)000-00-00", { placeholder: "7(___)___-__-__" });
 });

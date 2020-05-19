@@ -4,6 +4,7 @@
   border-radius: 2px
   text-transform: uppercase
   font-size: 0.93rem
+  outline: none
   &:hover
     cursor: pointer
   &--primary
@@ -22,6 +23,7 @@
   &--light 
     color: rgba($light, 0.5) 
 .input
+  outline: none
   background-color: transparent
   border: none
   border-bottom: 1px solid rgba(54, 54, 54, 0.3)
@@ -45,6 +47,7 @@
   &__label
     display: flex
     align-items: center
+    font-size: 1.142rem
     &::before
       content: ''
       width: 18px
@@ -53,5 +56,12 @@
       border-radius: 1px 
       cursor: pointer
       margin-right: 0.64rem
-      
+    &--center
+      justify-content: center  
+label
+  &.invalid
+    color: tomato   
+input
+  &.invalid
+    border-bottom: 1px solid tomato     
 
