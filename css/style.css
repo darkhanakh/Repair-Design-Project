@@ -692,10 +692,12 @@ input.invalid {
   max-width: 55rem;
   margin: auto; }
 
-.control__input-group {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 30%; }
+.control__input {
+  color: #131313; }
+  .control__input-group {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%; }
 
 .control__label {
   margin-bottom: -7px;
