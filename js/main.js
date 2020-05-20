@@ -51,8 +51,7 @@ $(document).ready(function () {
       event.preventDefault();
       var top = $("#js-hero").offset().top;
 
-      $("html, body").animate(
-        {
+      $("html, body").animate({
           scrollTop: top,
         },
         500
@@ -101,5 +100,7 @@ $(document).ready(function () {
 
   // * Маска для телефона
 
-  $("[type=tel]").mask("+7(000)000-00-00", { placeholder: "7(___)___-__-__" });
+  $("[type=tel]").mask("+7(000)000-00-00", {
+    placeholder: "7(___)___-__-__"
+  });
 });

@@ -887,6 +887,30 @@ input.invalid {
   .footer__menu {
     background-color: #131313;
     padding: 4.285rem 0; }
+  .footer__map {
+    margin-top: 3.07rem;
+    margin-bottom: 4.64rem; }
+
+.information__title {
+  margin: auto;
+  max-width: 42.08rem;
+  font-family: Yeseva One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.42rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #E3B873;
+  margin-bottom: 1.86rem; }
+
+.information__links {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.information__link {
+  margin-right: 1.07rem; }
 
 @media screen and (max-width: 1200px) {
   html {
