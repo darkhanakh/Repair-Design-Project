@@ -96,6 +96,20 @@ $(document).ready(function () {
         email: "Введите корректный email",
       },
     },
+
+    submitHandler: function (form) {
+      $.ajax({
+        type: "POST",
+        url: "email.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Форма отправлена, мы с вами свяжемся в течении 15 минут');
+          $(form)[0].reset();
+          modal.removeClass("modal--visible");
+          console.log("Ajax сработал, ответ сервера: " + response);
+        }
+      });
+    }
   });
 
   // * Маска для телефона

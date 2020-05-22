@@ -16,7 +16,7 @@ try {
     //Server settings
     $mail->SMTPDebug = 0;                      // Enable verbose debug output
     $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+    $mail->Host = "smtp.gmail.ru";                   // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'darkhan.akhmetovthree@gmail.com';          // SMTP username
     $mail->Password   = 'Dar050811!';                               // SMTP password
@@ -25,7 +25,7 @@ try {
 
     //Recipients
     $mail->setFrom('darkhan.akhmetovthree@gmail.com', 'Дархан');
-    $mail->addAddress('darkhanahmetov2005@gmail.com');     // Add a recipient
+    $mail->addAddress('darkhanakhmetov2005@gmail.com');     // Add a recipient
 
 
     // Content
