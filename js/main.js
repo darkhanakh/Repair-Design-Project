@@ -15,6 +15,7 @@
 }); */
 
 $(document).ready(function () {
+  // TODO  Открытие модального окна
   var modal = $(".modal"),
     modalButton = $("[data-toggle=modal]"),
     closeModal = $(".modal__close");
@@ -26,7 +27,7 @@ $(document).ready(function () {
   closeModal.on("click", function () {
     modal.toggleClass("modal--visible");
   });
-
+  // TODO Слайдер
   var mySwiper = new Swiper(".swiper-container", {
     loop: true,
     pagination: {
@@ -46,6 +47,7 @@ $(document).ready(function () {
   next.css("left", prev.width() + 10 + bullets.width() + 10);
   bullets.css("left", prev.width() + 10);
 
+  // TODO Плавная прокрутка
   function smoothScroolHome() {
     $("#js-arrow").on("click", function (event) {
       event.preventDefault();
@@ -58,11 +60,89 @@ $(document).ready(function () {
       );
     });
   }
+
+  $('a[data-target^="anchor"]').bind('click.smoothscroll', function () {
+    var target = $(this).attr('href');
+    var blTop = $(target).offset().top;
+    $("html, body").animate({
+        scrollTop: blTop,
+      },
+      500
+    );
+  });
+
+
   smoothScroolHome();
 
   new WOW().init();
 
   // TODO Валидация формы
+
+  $(".control__form").validate({
+    // * Имя класса для ошибки
+    errorClass: "invalid",
+    // * Правило для форм
+    rules: {
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15,
+      },
+      userPhone: "required",
+
+      userEmail: {
+        required: true,
+        email: true,
+      },
+    },
+
+    //* Сообщение которое будет выводится
+    messages: {
+      userName: {
+        required: "Заполните поле",
+        minlength: "Имя не короче двух букв",
+        maxlength: "Имя не длиннее 15 букв",
+      },
+      userPhone: "Заполните поле",
+
+      userEmail: {
+        required: "Заполните поле",
+        email: "Введите корректный email",
+      },
+    }
+  });
+
+  $(".footer__form").validate({
+    // * Имя класса для ошибки
+    errorClass: "invalid",
+    // * Правило для форм
+    rules: {
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15,
+      },
+      userPhone: "required",
+
+      userQuestion: {
+        required: true,
+      },
+    },
+
+    //* Сообщение которое будет выводится
+    messages: {
+      userName: {
+        required: "Заполните поле",
+        minlength: "Имя не короче двух букв",
+        maxlength: "Имя не длиннее 15 букв",
+      },
+      userPhone: "Заполните поле",
+
+      userQuestion: {
+        required: "Заполните поле",
+      },
+    }
+  });
 
   $(".modal__form").validate({
     // * Имя класса для ошибки
@@ -97,16 +177,20 @@ $(document).ready(function () {
       },
     },
 
+
+    //* Ajax
     submitHandler: function (form) {
       $.ajax({
         type: "POST",
         url: "email.php",
         data: $(form).serialize(),
         success: function (response) {
-          console.log('Форма отправлена, мы с вами свяжемся в течении 15 минут');
+          console.log("Ajax сработал, ответ сервера: " + response);
+          alert('Форма отправлена, мы с вами свяжемся в течении 15 минут');
           $(form)[0].reset();
           modal.removeClass("modal--visible");
-          console.log("Ajax сработал, ответ сервера: " + response);
+          ym(64338334, 'reachGoal', 'form');
+          return true;
         }
       });
     }
