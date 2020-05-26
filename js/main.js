@@ -109,6 +109,22 @@ $(document).ready(function () {
         required: "Заполните поле",
         email: "Введите корректный email",
       },
+    },
+
+    //* Ajax
+    submitHandler: function (form) {
+      $.ajax({
+        type: "POST",
+        url: "email.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log("Ajax сработал, ответ сервера: " + response);
+          alert('Форма отправлена, мы с вами свяжемся в течении 15 минут');
+          $(form)[0].reset();
+          ym(64338334, 'reachGoal', 'form');
+          return true;
+        }
+      });
     }
   });
 
@@ -141,6 +157,22 @@ $(document).ready(function () {
       userQuestion: {
         required: "Заполните поле",
       },
+    },
+
+    //* Ajax
+    submitHandler: function (form) {
+      $.ajax({
+        type: "POST",
+        url: "email.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log("Ajax сработал, ответ сервера: " + response);
+          alert('Форма отправлена, мы с вами свяжемся в течении 15 минут');
+          $(form)[0].reset();
+          ym(64338334, 'reachGoal', 'form');
+          return true;
+        }
+      });
     }
   });
 
