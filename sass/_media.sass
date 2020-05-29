@@ -4,7 +4,10 @@
   .nav
     &__item
       margin-right: 1rem
-@media screen and (max-width: 992px)  
+@media screen and (max-width: 992px) 
+  .row
+    flex-direction: column
+    align-items: center 
   .nav
     display: none
   .hero
@@ -12,6 +15,14 @@
       display: none
     &__content
       margin-left: 0
+  .swiper
+    &-slide
+      &__img
+        margin-top: 2.4rem  
+      &__heading
+        font-size: 1rem  
+      &__text
+        margin-right: 1rem
 @media screen and (max-width: 760px) 
   .row
     flex-direction: column
@@ -29,7 +40,13 @@
 
   .card
     &__text
-      margin-left: 0      
+      margin-left: 0 
+
+@media screen and ( max-width: 690px )
+  .swiper
+    &-slide 
+      &__text
+        margin-right: 2rem
 @media screen and ( max-width: 570px ) 
   .contacts
     &__phone
@@ -45,13 +62,17 @@
       display: none
     &__content
       max-width: 22.86rem
+      margin: auto
     &__title
-      font-size: 1.29rem
+      font-size: 1.64rem
       margin-bottom: 2.28rem
+      max-width: 20rem
     &__button
       display: block
       min-width: 22.86rem
       margin-bottom: 1.85rem
+    &__text
+      font-size: 1.286rem  
   .control
     background-color: $dark
     &__input
@@ -66,7 +87,10 @@
       display: flex
       flex-direction: column
     &__button
-      padding: 1.43rem 8.86rem
+      padding-top: 1.43rem
+      padding-bottom: 1.43rem
+      padding-left: 0.5rem
+      padding-right: 0.5rem
       font-size: 1.5rem
       order: 5
     &__policy
@@ -77,8 +101,44 @@
         justify-content: start 
         font-size: 1.143rem 
   .swiper
+    &-button
+      &-prev
+        width: 40px
+      &-next 
+        width: 40px
+      &-pagination 
+        width: 45px
     &-slide 
-      margin-top: 2rem      
+      &__heading
+        font-size: 0.9rem
+      &__text
+        font-size: 0.8rem
+        margin-top: 2rem
+        flex-basis: 29%
+        margin-right: 1.3rem
+  .video
+    &__play
+      max-width: 115px
+      max-height: 115px
+  .footer
+    &__map
+      height: 70%        
+@media screen and ( max-width: 370px )
+  .swiper
+    &-slide
+      &__text
+        margin-right: 2rem
+    &-button
+      &-prev
+        width: 35px
+      &-next 
+        width: 35px
+      &-pagination 
+        width: 40px
+  .col
+    &-50
+      width: 200px          
+
 
 
        

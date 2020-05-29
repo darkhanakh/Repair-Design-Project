@@ -364,14 +364,14 @@ body {
   src: url("../fonts/futura/FuturaBookC.woff") format("woff"), url("../fonts/futura/FuturaBookC.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  font-display: wrap; }
+  font-display: swap; }
 
 @font-face {
   font-family: 'Futura Demi';
   src: url("../fonts/futura/FuturaDemiC.woff") format("woff"), url("../fonts/futura/FuturaDemiC.woff2") format("woff");
   font-weight: normal;
   font-style: normal;
-  font-display: wrap; }
+  font-display: swap; }
 
 .container {
   width: 85%;
@@ -466,10 +466,30 @@ body {
     justify-content: center; }
 
 label.invalid {
-  color: tomato; }
+  color: tomato;
+  position: absolute;
+  margin-top: 3.786rem; }
 
 input.invalid {
   border-bottom: 1px solid tomato; }
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #E3B873;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; }
+  .arrow a {
+    display: block;
+    transform: rotate(90deg);
+    font-size: 36px;
+    text-decoration: none;
+    color: #131313; }
 
 .header {
   position: fixed;
@@ -487,8 +507,12 @@ input.invalid {
 
 .logo {
   font-size: 1.075rem;
-  color: #E3B873;
   text-transform: uppercase; }
+  .logo__link {
+    text-decoration: none;
+    color: #E3B873; }
+    .logo__link:hover {
+      color: #fff; }
 
 .nav__item {
   text-decoration: none;
@@ -504,6 +528,8 @@ input.invalid {
 
 .contacts__phone {
   margin-right: 45px; }
+  .contacts__phone:hover {
+    text-decoration: none; }
 
 .hero {
   position: relative;
@@ -613,7 +639,7 @@ input.invalid {
   display: flex;
   flex-wrap: wrap; }
   .swiper-slide__text {
-    flex-basis: 50%;
+    flex-basis: 39%;
     margin-bottom: 2.42rem; }
   .swiper-slide__heading {
     font-size: 1.285rem;
@@ -629,6 +655,7 @@ input.invalid {
     background-color: #fff; }
 
 .swiper-button-prev, .swiper-button-next {
+  outline: none;
   bottom: 0;
   top: auto;
   background-size: 42px;
@@ -660,6 +687,7 @@ input.invalid {
   max-width: 58.357rem;
   min-height: 31rem;
   background: #131313 url("../img/video-background.jpg") center no-repeat;
+  background-size: contain;
   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15); }
   .control__video::before {
     position: absolute;
@@ -805,7 +833,8 @@ input.invalid {
     background: transparent url("../img/close.svg") no-repeat center;
     border: none;
     margin: 0.86rem;
-    cursor: pointer; }
+    cursor: pointer;
+    outline: none; }
   .modal__title {
     font-family: 'Yeseva One', cursive;
     font-size: 1.36rem;
@@ -822,27 +851,10 @@ input.invalid {
   .modal__input:last-of-type {
     margin-bottom: 1rem; }
   .modal__policy {
-    margin-bottom: 2.7rem; }
+    margin-bottom: 2.7rem;
+    margin-top: -4rem; }
   .modal__button {
     align-self: flex-end; }
-
-.arrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background-color: #E3B873;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%; }
-  .arrow a {
-    display: block;
-    transform: rotate(90deg);
-    font-size: 36px;
-    text-decoration: none;
-    color: #131313; }
 
 .footer {
   background: #131313 url("../img/footer-bg.jpg") no-repeat center/cover;
@@ -886,10 +898,13 @@ input.invalid {
     padding: 1.285rem 4.785rem; }
   .footer__menu {
     background-color: #131313;
-    padding: 4.285rem 0; }
+    padding: 2rem 0; }
   .footer__map {
+    margin: auto;
     margin-top: 3.07rem;
-    margin-bottom: 4.64rem; }
+    margin-bottom: 4.64rem;
+    display: flex;
+    justify-content: center; }
 
 .information__title {
   margin: auto;
@@ -919,12 +934,21 @@ input.invalid {
     margin-right: 1rem; } }
 
 @media screen and (max-width: 992px) {
+  .row {
+    flex-direction: column;
+    align-items: center; }
   .nav {
     display: none; }
   .hero__instagram {
     display: none; }
   .hero__content {
-    margin-left: 0; } }
+    margin-left: 0; }
+  .swiper-slide__img {
+    margin-top: 2.4rem; }
+  .swiper-slide__heading {
+    font-size: 1rem; }
+  .swiper-slide__text {
+    margin-right: 1rem; } }
 
 @media screen and (max-width: 760px) {
   .row {
@@ -939,6 +963,10 @@ input.invalid {
   .card__text {
     margin-left: 0; } }
 
+@media screen and (max-width: 690px) {
+  .swiper-slide__text {
+    margin-right: 2rem; } }
+
 @media screen and (max-width: 570px) {
   .contacts__phone {
     margin-right: 0;
@@ -951,14 +979,18 @@ input.invalid {
   .hero__scroll-down {
     display: none; }
   .hero__content {
-    max-width: 22.86rem; }
+    max-width: 22.86rem;
+    margin: auto; }
   .hero__title {
-    font-size: 1.29rem;
-    margin-bottom: 2.28rem; }
+    font-size: 1.64rem;
+    margin-bottom: 2.28rem;
+    max-width: 20rem; }
   .hero__button {
     display: block;
     min-width: 22.86rem;
     margin-bottom: 1.85rem; }
+  .hero__text {
+    font-size: 1.286rem; }
   .control {
     background-color: #131313; }
     .control__input::-webkit-input-placeholder {
@@ -980,7 +1012,10 @@ input.invalid {
       display: flex;
       flex-direction: column; }
     .control__button {
-      padding: 1.43rem 8.86rem;
+      padding-top: 1.43rem;
+      padding-bottom: 1.43rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
       font-size: 1.5rem;
       order: 5; }
     .control__policy {
@@ -990,5 +1025,33 @@ input.invalid {
       .control__policy-label {
         justify-content: start;
         font-size: 1.143rem; }
-  .swiper-slide {
-    margin-top: 2rem; } }
+  .swiper-button-prev {
+    width: 40px; }
+  .swiper-button-next {
+    width: 40px; }
+  .swiper-button-pagination {
+    width: 45px; }
+  .swiper-slide__heading {
+    font-size: 0.9rem; }
+  .swiper-slide__text {
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    flex-basis: 29%;
+    margin-right: 1.3rem; }
+  .video__play {
+    max-width: 115px;
+    max-height: 115px; }
+  .footer__map {
+    height: 70%; } }
+
+@media screen and (max-width: 370px) {
+  .swiper-slide__text {
+    margin-right: 2rem; }
+  .swiper-button-prev {
+    width: 35px; }
+  .swiper-button-next {
+    width: 35px; }
+  .swiper-button-pagination {
+    width: 40px; }
+  .col-50 {
+    width: 200px; } }

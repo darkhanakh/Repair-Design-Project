@@ -12,8 +12,12 @@
   align-items: center
 .logo
   font-size: 1.075rem
-  color: $primary
   text-transform: uppercase
+  &__link
+    text-decoration: none
+    color: $primary
+    &:hover
+      color: #fff
 .nav
   &__item
     text-decoration: none
@@ -28,5 +32,7 @@
 .contacts
   &__phone
     margin-right: 45px
+    &:hover
+      text-decoration: none
   
 

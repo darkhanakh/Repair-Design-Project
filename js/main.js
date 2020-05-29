@@ -1,21 +1,7 @@
-/* document.addEventListener("DOMContentLoaded", function (event) {
-  const modal = document.querySelector('.modal');
-  const modalButton = document.querySelectorAll('[data-toggle=modal]');
-  const closeModal = document.querySelector('.modal__close');
-
-  const switchModal = () => {
-    modal.classList.toggle('modal--visible');
-  };
-
-  modalButton.forEach(element => {
-    element.addEventListener('click', switchModal);
-  });
-
-  closeModal.addEventListener('click', switchModal);
-}); */
-
 $(document).ready(function () {
   // TODO  Открытие модального окна
+  var heroButton = $(".hero__button");
+
   var modal = $(".modal"),
     modalButton = $("[data-toggle=modal]"),
     closeModal = $(".modal__close");
@@ -27,6 +13,17 @@ $(document).ready(function () {
   closeModal.on("click", function () {
     modal.toggleClass("modal--visible");
   });
+
+  heroButton.on("click", function () {
+    modal.toggleClass("modal--visible");
+  });
+
+  $(document).keyup(function (e) {
+    if (e.key === "Escape" || e.keyCode === 27) {
+      modal.removeClass("modal--visible");
+    }
+  });
+
   // TODO Слайдер
   var mySwiper = new Swiper(".swiper-container", {
     loop: true,
@@ -61,8 +58,8 @@ $(document).ready(function () {
     });
   }
 
-  $('a[data-target^="anchor"]').bind('click.smoothscroll', function () {
-    var target = $(this).attr('href');
+  $('a[data-target^="anchor"]').bind("click.smoothscroll", function () {
+    var target = $(this).attr("href");
     var blTop = $(target).offset().top;
     $("html, body").animate({
         scrollTop: blTop,
@@ -72,6 +69,19 @@ $(document).ready(function () {
   });
 
 
+  function smoothScrollScrollDown() {
+    $('#js-scroll-down').on('click', function (event) {
+      event.preventDefault();
+      var scrollDown = $('#js-projects').offset().top;
+
+      $("html, body").animate({
+          scrollTop: scrollDown,
+        },
+        500
+      );
+    });
+  }
+  smoothScrollScrollDown();
   smoothScroolHome();
 
   new WOW().init();
@@ -88,11 +98,17 @@ $(document).ready(function () {
         minlength: 2,
         maxlength: 15,
       },
-      userPhone: "required",
+      userPhone: {
+        required: true,
+        minlength: 11,
+      },
 
       userEmail: {
         required: true,
         email: true,
+      },
+      policyСheckbox: {
+        required: true,
       },
     },
 
@@ -103,11 +119,17 @@ $(document).ready(function () {
         minlength: "Имя не короче двух букв",
         maxlength: "Имя не длиннее 15 букв",
       },
-      userPhone: "Заполните поле",
+      userPhone: {
+        required: "Заполните поле",
+        minlength: "Введите полный номер телефона",
+      },
 
       userEmail: {
         required: "Заполните поле",
         email: "Введите корректный email",
+      },
+      policyСheckbox: {
+        required: "Согласитесь с условиями обработки данных",
       },
     },
 
@@ -119,13 +141,13 @@ $(document).ready(function () {
         data: $(form).serialize(),
         success: function (response) {
           console.log("Ajax сработал, ответ сервера: " + response);
-          alert('Форма отправлена, мы с вами свяжемся в течении 15 минут');
+          alert("Форма отправлена, мы с вами свяжемся в течении 15 минут");
           $(form)[0].reset();
-          ym(64338334, 'reachGoal', 'form');
+          ym(64338334, "reachGoal", "form");
           return true;
-        }
+        },
       });
-    }
+    },
   });
 
   $(".footer__form").validate({
@@ -138,9 +160,16 @@ $(document).ready(function () {
         minlength: 2,
         maxlength: 15,
       },
-      userPhone: "required",
+      userPhone: {
+        required: true,
+        minlength: 11,
+      },
 
       userQuestion: {
+        required: true,
+      },
+
+      policyCheckbox: {
         required: true,
       },
     },
@@ -152,10 +181,17 @@ $(document).ready(function () {
         minlength: "Имя не короче двух букв",
         maxlength: "Имя не длиннее 15 букв",
       },
-      userPhone: "Заполните поле",
+      userPhone: {
+        required: "Заполните поле",
+        minlength: "Введите полный номер телефона",
+      },
 
       userQuestion: {
         required: "Заполните поле",
+      },
+
+      policyCheckbox: {
+        required: "Согласитесь с условиями обработки данных",
       },
     },
 
@@ -167,13 +203,13 @@ $(document).ready(function () {
         data: $(form).serialize(),
         success: function (response) {
           console.log("Ajax сработал, ответ сервера: " + response);
-          alert('Форма отправлена, мы с вами свяжемся в течении 15 минут');
+          alert("Форма отправлена, мы с вами свяжемся в течении 15 минут");
           $(form)[0].reset();
-          ym(64338334, 'reachGoal', 'form');
+          ym(64338334, "reachGoal", "form");
           return true;
-        }
+        },
       });
-    }
+    },
   });
 
   $(".modal__form").validate({
@@ -186,11 +222,17 @@ $(document).ready(function () {
         minlength: 2,
         maxlength: 15,
       },
-      userPhone: "required",
+      userPhone: {
+        required: true,
+        minlength: 11,
+      },
 
       userEmail: {
         required: true,
         email: true,
+      },
+      policyСheckbox: {
+        required: true,
       },
     },
 
@@ -201,14 +243,19 @@ $(document).ready(function () {
         minlength: "Имя не короче двух букв",
         maxlength: "Имя не длиннее 15 букв",
       },
-      userPhone: "Заполните поле",
+      userPhone: {
+        required: "Заполните поле",
+        minlength: "Введите полный номер телефона",
+      },
 
       userEmail: {
         required: "Заполните поле",
         email: "Введите корректный email",
       },
+      policyСheckbox: {
+        required: "Согласитесь с условиями обработки данных",
+      },
     },
-
 
     //* Ajax
     submitHandler: function (form) {
@@ -218,19 +265,19 @@ $(document).ready(function () {
         data: $(form).serialize(),
         success: function (response) {
           console.log("Ajax сработал, ответ сервера: " + response);
-          alert('Форма отправлена, мы с вами свяжемся в течении 15 минут');
+          alert("Форма отправлена, мы с вами свяжемся в течении 15 минут");
           $(form)[0].reset();
           modal.removeClass("modal--visible");
-          ym(64338334, 'reachGoal', 'form');
+          ym(64338334, "reachGoal", "form");
           return true;
-        }
+        },
       });
-    }
+    },
   });
 
   // * Маска для телефона
 
   $("[type=tel]").mask("+7(000)000-00-00", {
-    placeholder: "7(___)___-__-__"
+    placeholder: "Ваш номер телефона:",
   });
 });
