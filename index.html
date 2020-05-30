@@ -14,15 +14,12 @@
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script
-      src="https://api-maps.yandex.ru/2.1/?apikey=6d03ffaf-0014-4b4a-9e23-4f50f33b07c2&lang=ru_RU"
-      type="text/javascript"
-    ></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=6d03ffaf-0014-4b4a-9e23-4f50f33b07c2&lang=ru_RU"></script>
   </head>
 
   <body>
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
+    <script>
       (function (m, e, t, r, i, k, a) {
         m[i] =
           m[i] ||
@@ -257,21 +254,21 @@
                     <img
                       src="img/projects/project-2.jpg"
                       alt="project"
-                      class="swiper-slide__img"
+                      class="swiper-slide__img lazyload"
                     />
                   </div>
                   <div class="swiper-slide">
                     <img
                       src="img/projects/project-3.jpg"
                       alt="project"
-                      class="swiper-slide__img"
+                      class="swiper-slide__img lazyload"
                     />
                   </div>
                   <div class="swiper-slide">
                     <img
                       src="img/projects/project-4.jpg"
                       alt="project"
-                      class="swiper-slide__img"
+                      class="swiper-slide__img lazyload"
                     />
                   </div>
                 </div>
@@ -295,7 +292,7 @@
             </h2>
             <!-- /.section-title__heading -->
             <div class="section-title__image">
-              <img src="img/video.svg" alt="video" />
+              <img src="img/video.svg" alt="video" class="lazyload" />
             </div>
             <!-- /.section-title__image -->
           </div>
@@ -310,7 +307,7 @@
               <img
                 src="img/play-icon.svg"
                 alt="paly-icon"
-                class="video__play"
+                class="video__play lazyload"
               />
             </a>
           </div>
@@ -393,7 +390,7 @@
             </h2>
             <!-- /.section-title__heading -->
             <div class="section-title__image">
-              <img src="img/repair.svg" alt="repair" />
+              <img src="img/repair.svg" alt="repair" class="lazyload" />
             </div>
             <!-- /.section-title__image -->
           </div>
@@ -404,7 +401,7 @@
                 <img
                   src="img/types/type-1.jpg"
                   alt="type-1"
-                  class="card__image"
+                  class="card__image lazyload"
                 />
                 <div class="card__text">
                   <h3 class="card__title">Косметический ремонт</h3>
@@ -441,7 +438,7 @@
                 <img
                   src="img/types/type-2.jpg"
                   alt="type-2"
-                  class="card__image"
+                  class="card__image lazyload"
                 />
                 <div class="card__text">
                   <h3 class="card__title">Капитальный ремонт</h3>
@@ -478,7 +475,7 @@
                 <img
                   src="img/types/type-3.jpg"
                   alt="type-3"
-                  class="card__image"
+                  class="card__image lazyload"
                 />
                 <div class="card__text">
                   <h3 class="card__title">Дизайнерский ремонт</h3>
@@ -525,7 +522,7 @@
             </h2>
             <!-- /.section-title__heading -->
             <div class="section-title__image">
-              <img src="img/design.svg" alt="design" />
+              <img src="img/design.svg" alt="design" class="lazyload" />
             </div>
             <!-- /.section-title__image -->
           </div>
@@ -542,7 +539,11 @@
           <div class="row">
             <div class="col-30">
               <div class="card design__card wow fadeInUp" data-wow-delay="0.4s">
-                <img src="img/design/design-1.jpg" alt="design-1" />
+                <img
+                  src="img/design/design-1.jpg"
+                  alt="design-1"
+                  class="lazyload"
+                />
                 <div class="card__text">
                   <h3 class="card__title">Минимальный</h3>
                   <!-- /.card__title -->
@@ -569,7 +570,11 @@
             <!-- /.col -->
             <div class="col-30">
               <div class="card design__card wow fadeInUp" data-wow-delay="0.6s">
-                <img src="img/design/design-2.jpg" alt="design-2" />
+                <img
+                  src="img/design/design-2.jpg"
+                  alt="design-2"
+                  class="lazyload"
+                />
                 <div class="card__text">
                   <h3 class="card__title">Стандартный</h3>
                   <!-- /.card__title -->
@@ -602,7 +607,11 @@
             <!-- /.col -->
             <div class="col-30">
               <div class="card design__card wow fadeInUp" data-wow-delay="0.8s">
-                <img src="img/design/design-3.jpg" alt="design-3" />
+                <img
+                  src="img/design/design-3.jpg"
+                  alt="design-3"
+                  class="lazyload"
+                />
                 <div class="card__text">
                   <h3 class="card__title">Полный</h3>
                   <!-- /.card__title -->
@@ -741,10 +750,10 @@
               href="mailto:darkhanahmetov2005@gmail.com"
               class="link information__link"
             >
-              <img src="img/mail-1.png" alt="mail" />
+              <img src="img/mail-1.png" alt="mail" class="lazyload" />
             </a>
             <a href="#" class="link information__link">
-              <img src="img/instagram.png" alt="instagram" />
+              <img src="img/instagram.png" alt="instagram" class="lazyload" />
             </a>
           </div>
         </div>
@@ -890,6 +899,7 @@
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.lazyload.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

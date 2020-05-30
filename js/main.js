@@ -288,4 +288,6 @@ $(document).ready(function () {
   $("[type=tel]").mask("+7(000)000-00-00", {
     placeholder: "Ваш номер телефона:",
   });
+
+  lazyload();
 });
