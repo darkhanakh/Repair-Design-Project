@@ -359,6 +359,9 @@ body {
         background-color: #E3B873;
         margin: 0 10px; }
 
+::-moz-placeholder, :-moz-placeholder {
+  opacity: 1; }
+
 @font-face {
   font-family: 'Futura Book';
   src: url("../fonts/futura/FuturaBookC.woff") format("woff"), url("../fonts/futura/FuturaBookC.woff") format("woff");
@@ -447,7 +450,7 @@ body {
 .policy__checkbox {
   opacity: 0;
   visibility: hidden; }
-  .policy__checkbox:checked + .policy__label::before {
+  .policy__checkbox:checked ~ .policy__label::before {
     background: #E3B873 url(../img/check.svg) no-repeat center/0.8rem; }
 
 .policy__label {
@@ -598,9 +601,14 @@ input.invalid {
       border: 2px solid #E3B873;
       border-radius: 50%;
       margin-left: 12px; }
+    .hero__scroll-down:hover {
+      color: #E3B873; }
   .hero__button {
     margin-right: 2.85rem;
     padding: 20px 35px; }
+    .hero__button--transparent:hover {
+      border-color: #E3B873;
+      color: #E3B873; }
 
 .instagram {
   background-color: #131313;
@@ -616,6 +624,8 @@ input.invalid {
     transform: rotate(90deg);
     font-size: 1.1rem;
     line-height: 0.8; }
+    .instagram-link:hover {
+      color: white; }
     .instagram-link::after {
       content: '';
       width: 50px;
@@ -743,6 +753,8 @@ input.invalid {
 .video__play {
   position: relative;
   margin: auto; }
+  .video__play:hover {
+    background-color: #363636; }
 
 .types__section-title {
   margin-bottom: 2.21rem; }
@@ -926,6 +938,8 @@ input.invalid {
 
 .information__link {
   margin-right: 1.07rem; }
+  .information__link:hover {
+    background-color: #363636; }
 
 @media screen and (max-width: 1200px) {
   html {

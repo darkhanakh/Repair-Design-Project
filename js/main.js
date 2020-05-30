@@ -7,7 +7,7 @@ $(document).ready(function () {
     closeModal = $(".modal__close");
 
   modalButton.on("click", function () {
-    modal.toggleClass("modal--visible");
+    modal.addClass("modal--visible");
   });
 
   closeModal.on("click", function () {
@@ -24,6 +24,12 @@ $(document).ready(function () {
     }
   });
 
+  $(".modal").on("click", (event) => {
+    var target = event.target;
+    if (!target.closest(".modal__dialog")) {
+      modal.removeClass("modal--visible");
+    }
+  });
   // TODO Слайдер
   var mySwiper = new Swiper(".swiper-container", {
     loop: true,
@@ -50,7 +56,8 @@ $(document).ready(function () {
       event.preventDefault();
       var top = $("#js-hero").offset().top;
 
-      $("html, body").animate({
+      $("html, body").animate(
+        {
           scrollTop: top,
         },
         500
@@ -61,20 +68,21 @@ $(document).ready(function () {
   $('a[data-target^="anchor"]').bind("click.smoothscroll", function () {
     var target = $(this).attr("href");
     var blTop = $(target).offset().top;
-    $("html, body").animate({
+    $("html, body").animate(
+      {
         scrollTop: blTop,
       },
       500
     );
   });
 
-
   function smoothScrollScrollDown() {
-    $('#js-scroll-down').on('click', function (event) {
+    $("#js-scroll-down").on("click", function (event) {
       event.preventDefault();
-      var scrollDown = $('#js-projects').offset().top;
+      var scrollDown = $("#js-projects").offset().top;
 
-      $("html, body").animate({
+      $("html, body").animate(
+        {
           scrollTop: scrollDown,
         },
         500
